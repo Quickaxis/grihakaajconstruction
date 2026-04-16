@@ -66,7 +66,7 @@ const App: React.FC = () => {
                 <div className="flex items-end justify-start lg:justify-end mt-12 lg:mt-0">
                   <FadeIn delay={1400} className="w-full lg:w-auto">
                     <div className="w-full sm:w-auto text-center sm:text-left liquid-glass border border-white/20 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-light mt-0">
-                      <span className="tracking-wide">
+                      <span className="tracking-wide text-white">
                         Build. Design. Guarantee.
                       </span>
                     </div>
@@ -76,7 +76,6 @@ const App: React.FC = () => {
               </div>
             </div>
           </div>
-
 
         </div>
       </section>
@@ -104,7 +103,7 @@ const App: React.FC = () => {
                     <span className="px-3 py-1 border border-[#212842]/20 rounded-full text-[10px] uppercase tracking-wider text-[#212842]/60">Completed</span>
                   </div>
                   <p className="text-[#212842]/80 font-light leading-relaxed mb-6">A high-end residential package blending architectural precision with optimized cost engineering.</p>
-                  <div className="flex items-center gap-2 text-sm font-medium group-hover:gap-3 transition-all duration-300">
+                  <div className="flex items-center gap-2 text-sm font-medium group-hover:gap-3 transition-all duration-300 text-[#212842]">
                     View Project <ArrowRight size={16} />
                   </div>
                 </div>
@@ -124,7 +123,7 @@ const App: React.FC = () => {
                     <span className="px-3 py-1 border border-[#212842]/20 rounded-full text-[10px] uppercase tracking-wider text-[#212842]/60">In Progress</span>
                   </div>
                   <p className="text-[#212842]/80 font-light leading-relaxed mb-6">Large-scale structural projects designed to anchor urban centers across the Northeast.</p>
-                  <div className="flex items-center gap-2 text-sm font-medium group-hover:gap-3 transition-all duration-300">
+                  <div className="flex items-center gap-2 text-sm font-medium group-hover:gap-3 transition-all duration-300 text-[#212842]">
                     View Project <ArrowRight size={16} />
                   </div>
                 </div>
@@ -145,7 +144,7 @@ const App: React.FC = () => {
                 </h2>
                 <div className="flex items-center gap-4 text-[#212842]/60 mt-6 relative z-10">
                   <div className="w-8 h-[1px] bg-[#212842]/20"></div>
-                  <p className="font-medium text-sm">Nayanav Das, Chief Growth Officer</p>
+                  <p className="font-semibold text-sm text-[#212842]">Nayanav Das, Chief Growth Officer</p>
                 </div>
               </div>
 
@@ -162,7 +161,7 @@ const App: React.FC = () => {
                     <div>
                       <h4 className="text-xl font-semibold text-[#212842]">Nayanav Das</h4>
                       <p className="text-[#212842]/60 text-sm mb-2 uppercase tracking-wider font-light">Chief Growth Officer</p>
-                      <p className="text-sm text-[#212842]/70 max-w-sm leading-relaxed font-light">Pioneering growth and purpose-driven building across emerging markets through strategic vision.</p>
+                      <p className="text-sm text-[#212842]/80 max-w-sm leading-relaxed font-light">Pioneering growth and purpose-driven building across emerging markets through strategic vision.</p>
                     </div>
                   </div>
                 </div>
@@ -178,7 +177,7 @@ const App: React.FC = () => {
                     <div>
                       <h4 className="text-xl font-semibold text-[#212842]">Achintya Sinha</h4>
                       <p className="text-[#212842]/60 text-sm mb-2 uppercase tracking-wider font-light">Founder</p>
-                      <p className="text-sm text-[#212842]/70 max-w-sm leading-relaxed font-light">16 years of engineering legacy, scaling technical mastery to define the Northeast Skyline with precision.</p>
+                      <p className="text-sm text-[#212842]/80 max-w-sm leading-relaxed font-light">16 years of engineering legacy, scaling technical mastery to define the Northeast Skyline with precision.</p>
                     </div>
                   </div>
                 </div>
