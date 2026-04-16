@@ -48,7 +48,7 @@ const App: React.FC = () => {
                   
                   <FadeIn delay={800} duration={1000}>
                     <p className="text-xs sm:text-sm md:text-base text-gray-200 mb-6 font-light max-w-sm leading-relaxed">
-                      16 Years of Precision Engineering. Led by CGO Nayanav Das.
+                      16 Years of Precision Engineering.
                     </p>
                   </FadeIn>
                   
