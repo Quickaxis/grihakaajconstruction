@@ -19,7 +19,7 @@ const App: React.FC = () => {
     <div className="relative min-h-screen w-full flex flex-col bg-black text-white selection:bg-white selection:text-black">
       
       {/* SECTION 1: HERO */}
-      <section className="relative h-screen w-full flex flex-col">
+      <section className="relative min-h-[100dvh] w-full flex flex-col overflow-hidden">
         {/* Video Background Layer - STRICT RAW VERSION */}
         <video 
           src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260403_050628_c4e32401-fab4-4a27-b7a8-6e9291cd5959.mp4" 
@@ -35,8 +35,8 @@ const App: React.FC = () => {
           <Navbar />
 
           {/* Hero Content positioned at bottom - Pushed below visual focal point */}
-          <div className="relative z-10 flex flex-col flex-1 mt-auto pt-24 pb-8 sm:pb-12 md:px-12 lg:px-16 lg:pb-16 w-full">
-            <div className="max-w-[1400px] mx-auto w-full px-4 sm:px-8">
+          <div className="relative z-10 flex-1 flex flex-col justify-end pb-8 md:pb-16 px-4 md:px-12 lg:px-16 w-full mt-auto">
+            <div className="max-w-[1400px] mx-auto w-full">
               <div className="lg:grid lg:grid-cols-2 lg:items-end gap-12 lg:gap-0">
                 
                 {/* Left Column */}
@@ -53,7 +53,7 @@ const App: React.FC = () => {
                   </FadeIn>
                   
                   <FadeIn delay={1200}>
-                    <div className="flex flex-row gap-3 w-full mt-2 mb-8 lg:mb-0">
+                    <div className="flex flex-row gap-3 w-full mt-4 mb-6 sm:mb-8">
                       <button className="flex-1 flex justify-center items-center text-center bg-white text-black px-2 py-3 rounded-lg text-[13px] sm:text-sm font-medium transition-transform active:scale-95 hover:bg-gray-100 whitespace-nowrap">
                         Start a Build
                       </button>
@@ -67,7 +67,7 @@ const App: React.FC = () => {
                 {/* Right Column */}
                 <div className="flex items-end justify-start lg:justify-end mt-12 lg:mt-0">
                   <FadeIn delay={1400} className="w-full lg:w-auto">
-                    <div className="w-full sm:w-auto text-center liquid-glass border border-white/20 px-4 py-2 rounded-xl text-xs sm:text-sm font-light mt-auto">
+                    <div className="w-full sm:w-auto text-center liquid-glass border border-white/20 px-4 py-3 rounded-xl text-xs sm:text-sm font-light">
                       <span className="tracking-wide">
                         Build. Design. Guarantee.
                       </span>
@@ -79,11 +79,9 @@ const App: React.FC = () => {
             </div>
           </div>
 
-
-
-
         </div>
       </section>
+
 
       {/* CONTINUOUS CONTENT BELOW HERO */}
       <main className="bg-black text-white w-full">
