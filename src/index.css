@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,7 +5,7 @@
 @layer base {
   body {
     font-family: 'Inter', sans-serif !important;
-    font-weight: 300;
+    font-weight: 300 !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #000000;
@@ -50,7 +48,6 @@
     pointer-events: none;
   }
 
-  /* Blueprint Grid background helper */
   .bg-blueprint {
     background-image: 
       linear-gradient(to right, rgba(128, 128, 128, 0.07) 1px, transparent 1px),
@@ -58,7 +55,6 @@
     background-size: 24px 24px;
   }
 
-  /* Character Slide-in Animation */
   @keyframes charSlideIn {
     from {
       opacity: 0;
@@ -74,7 +70,6 @@
     animation: charSlideIn 0.5s forwards;
   }
 
-  /* Fade-in Animation */
   @keyframes fadeInKeyframes {
     from { opacity: 0; }
     to { opacity: 1; }
