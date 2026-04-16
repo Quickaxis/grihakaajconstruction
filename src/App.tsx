@@ -33,7 +33,7 @@ const App: React.FC = () => {
           <Navbar />
 
           {/* Hero Content positioned at bottom - Pushed below visual focal point */}
-          <div className="relative z-10 flex-1 flex flex-col justify-end pb-8 md:pb-16 px-4 md:px-12 lg:px-16 w-full mt-auto">
+          <div className="relative z-10 flex-1 flex flex-col justify-end pb-4 md:pb-12 px-4 md:px-12 lg:px-16 w-full mt-auto">
             <div className="max-w-[1400px] mx-auto w-full">
               <div className="lg:grid lg:grid-cols-2 lg:items-end gap-12 lg:gap-0">
                 
@@ -45,17 +45,17 @@ const App: React.FC = () => {
                   />
                   
                   <FadeIn delay={800} duration={1000}>
-                    <p className="text-xs sm:text-sm md:text-base text-gray-200 mb-6 font-light max-w-sm leading-relaxed">
+                    <p className="text-xs sm:text-sm md:text-base text-gray-200 mb-4 font-light max-w-sm leading-relaxed">
                       16 Years of Precision Engineering.
                     </p>
                   </FadeIn>
                   
                   <FadeIn delay={1200}>
-                    <div className="flex flex-row gap-3 w-full mt-4 mb-6 sm:mb-8">
-                      <button className="flex-1 flex justify-center items-center text-center bg-white text-black px-2 py-3 rounded-lg text-[13px] sm:text-sm font-medium transition-transform active:scale-95 hover:bg-gray-100 whitespace-nowrap">
+                    <div className="flex flex-row flex-wrap gap-3 w-full justify-start mt-2 mb-6">
+                      <button className="w-auto flex justify-center items-center text-center bg-white text-black px-6 py-2.5 rounded-lg text-[13px] sm:text-sm font-medium transition-transform active:scale-95 hover:bg-gray-100 whitespace-nowrap">
                         Start a Build
                       </button>
-                      <button className="flex-1 flex justify-center items-center text-center liquid-glass border border-white/20 text-white px-2 py-3 rounded-lg text-[13px] sm:text-sm font-light transition-all hover:bg-white hover:text-black active:scale-95 whitespace-nowrap">
+                      <button className="w-auto flex justify-center items-center text-center liquid-glass border border-white/20 text-white px-6 py-2.5 rounded-lg text-[13px] sm:text-sm font-light transition-all hover:bg-white hover:text-black active:scale-95 whitespace-nowrap">
                         Explore Projects
                       </button>
                     </div>
@@ -65,7 +65,7 @@ const App: React.FC = () => {
                 {/* Right Column */}
                 <div className="flex items-end justify-start lg:justify-end mt-12 lg:mt-0">
                   <FadeIn delay={1400} className="w-full lg:w-auto">
-                    <div className="w-full sm:w-auto text-center liquid-glass border border-white/20 px-4 py-3 rounded-xl text-xs sm:text-sm font-light">
+                    <div className="w-full sm:w-auto text-center sm:text-left liquid-glass border border-white/20 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-light mt-0">
                       <span className="tracking-wide">
                         Build. Design. Guarantee.
                       </span>
@@ -76,6 +76,7 @@ const App: React.FC = () => {
               </div>
             </div>
           </div>
+
 
         </div>
       </section>
