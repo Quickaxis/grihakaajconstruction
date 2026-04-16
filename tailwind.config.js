@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'gray-secondary': '#d1d5db', // gray-300
+        'brand-indigo': '#212842',
+        'brand-cream': '#F0E7D5',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
