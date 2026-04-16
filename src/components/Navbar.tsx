@@ -18,7 +18,7 @@ export const Navbar: React.FC = () => {
 
         <div className="shrink-0">
           <button className="bg-white text-black px-4 py-2 md:px-6 rounded-lg text-xs sm:text-sm font-medium whitespace-nowrap hover:bg-gray-100 transition-colors">
-            Start a Chat
+            Start a Build
           </button>
         </div>
       </div>

@@ -43,7 +43,7 @@ const App: React.FC = () => {
                 <div className="flex flex-col">
                   <AnimatedHeading 
                     text="Shaping the Northeast\nwith vision and action." 
-                    className="text-[2.5rem] leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-[-0.04em] mb-4 sm:mb-6"
+                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] tracking-[-0.04em] mb-4"
                   />
                   
                   <FadeIn delay={800} duration={1000}>
@@ -53,11 +53,11 @@ const App: React.FC = () => {
                   </FadeIn>
                   
                   <FadeIn delay={1200}>
-                    <div className="flex flex-col sm:flex-row flex-wrap gap-4 w-full sm:w-auto mb-8 lg:mb-0">
-                      <button className="w-full sm:w-auto bg-white text-black px-8 py-3.5 rounded-lg font-medium text-center transition-transform active:scale-95 hover:bg-gray-100">
+                    <div className="flex flex-col sm:flex-row flex-wrap gap-4 w-full sm:w-auto mt-6 mb-8 lg:mb-0">
+                      <button className="w-full sm:w-auto flex justify-center items-center text-center bg-white text-black px-8 py-4 rounded-lg font-medium transition-transform active:scale-95 hover:bg-gray-100">
                         Start a Build
                       </button>
-                      <button className="w-full sm:w-auto liquid-glass border border-white/20 text-white px-8 py-3.5 rounded-lg font-medium text-center transition-all hover:bg-white hover:text-black active:scale-95">
+                      <button className="w-full sm:w-auto flex justify-center items-center text-center liquid-glass border border-white/20 text-white px-8 py-4 rounded-lg font-medium transition-all hover:bg-white hover:text-black active:scale-95">
                         Explore Projects
                       </button>
                     </div>
@@ -67,7 +67,7 @@ const App: React.FC = () => {
                 {/* Right Column */}
                 <div className="flex items-end justify-start lg:justify-end mt-12 lg:mt-0">
                   <FadeIn delay={1400} className="w-full lg:w-auto">
-                    <div className="w-full lg:w-auto text-center lg:text-left liquid-glass border border-white/20 px-6 py-4 rounded-xl text-sm sm:text-base md:text-lg font-light mt-auto lg:mt-0">
+                    <div className="w-full sm:w-auto text-center sm:text-left liquid-glass border border-white/20 px-6 py-4 rounded-xl text-sm sm:text-base md:text-lg font-light mt-auto lg:mt-0">
                       <span className="tracking-wide">
                         Build. Design. Guarantee.
                       </span>
@@ -78,6 +78,7 @@ const App: React.FC = () => {
               </div>
             </div>
           </div>
+
 
         </div>
       </section>

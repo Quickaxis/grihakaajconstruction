@@ -41,28 +41,32 @@ export const AnimatedHeading: React.FC<{
     return () => clearTimeout(timer);
   }, []);
 
-  // Split by actual \n character or \n string
   const lines = text.split(/\\n|\n/);
+  let globalCharCount = 0;
 
   return (
     <div className={className}>
       {lines.map((line, lineIndex) => (
-        <span key={lineIndex} className="block">
-          {line.split('').map((char, charIndex) => {
-            const previousCharsLength = lines.slice(0, lineIndex).join('').length;
-            const delay = (previousCharsLength + charIndex) * 30;
-            return (
-              <span
-                key={charIndex}
-                className={`inline-block opacity-0 ${startAnimation ? 'animate-char' : ''}`}
-                style={{
-                  animationDelay: `${delay}ms`,
-                }}
-              >
-                {char === ' ' ? '\u00A0' : char}
-              </span>
-            );
-          })}
+        <span key={lineIndex} className="block overflow-hidden">
+          {line.split(' ').map((word, wordIndex) => (
+            <span key={wordIndex} className="inline-block whitespace-nowrap mr-[0.25em]">
+              {word.split('').map((char) => {
+                const delay = globalCharCount * 30;
+                globalCharCount++;
+                return (
+                  <span
+                    key={globalCharCount}
+                    className={`inline-block opacity-0 ${startAnimation ? 'animate-char' : ''}`}
+                    style={{
+                      animationDelay: `${delay}ms`,
+                    }}
+                  >
+                    {char}
+                  </span>
+                );
+              })}
+            </span>
+          ))}
         </span>
       ))}
     </div>
