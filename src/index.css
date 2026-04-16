@@ -2,29 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --midnight-indigo: #212842;
+  --vanilla-cream: #F0E7D5;
+}
+
 @layer base {
   body {
     font-family: 'Inter', sans-serif !important;
     font-weight: 300 !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #000000;
-    color: #ffffff;
+    background-color: var(--midnight-indigo) !important;
+    color: var(--vanilla-cream) !important;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
   }
+
+  /* Force all headings to use the luxury wide font */
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Montserrat', sans-serif !important;
+    color: var(--vanilla-cream) !important;
+    letter-spacing: -0.02em;
+  }
 }
 
 @layer components {
+  /* Update Liquid Glass to match Midnight Indigo palette */
   .liquid-glass {
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(33, 40, 66, 0.6) !important;
     background-blend-mode: luminosity;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border: none;
-    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(240, 231, 213, 0.1) !important;
     position: relative;
     overflow: hidden;
   }
@@ -34,14 +46,14 @@
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    padding: 1.4px;
+    padding: 1px;
     background: linear-gradient(180deg, 
-      rgba(255,255,255,0.3) 0%, 
-      rgba(255,255,255,0.1) 20%, 
-      rgba(255,255,255,0) 40%, 
-      rgba(255,255,255,0) 60%, 
-      rgba(255,255,255,0.1) 80%, 
-      rgba(255,255,255,0.3) 100%);
+      rgba(240, 231, 213, 0.3) 0%, 
+      rgba(240, 231, 213, 0.1) 20%, 
+      rgba(240, 231, 213, 0) 40%, 
+      rgba(240, 231, 213, 0) 60%, 
+      rgba(240, 231, 213, 0.1) 80%, 
+      rgba(240, 231, 213, 0.3) 100%);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -50,8 +62,8 @@
 
   .bg-blueprint {
     background-image: 
-      linear-gradient(to right, rgba(128, 128, 128, 0.07) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(128, 128, 128, 0.07) 1px, transparent 1px);
+      linear-gradient(to right, rgba(240, 231, 213, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(240, 231, 213, 0.05) 1px, transparent 1px);
     background-size: 24px 24px;
   }
 
