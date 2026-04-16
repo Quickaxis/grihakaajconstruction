@@ -35,30 +35,30 @@ const App: React.FC = () => {
           <Navbar />
 
           {/* Hero Content positioned at bottom */}
-          <div className="flex-1 flex flex-col justify-end px-6 md:px-12 lg:px-16 pb-12 lg:pb-16 w-full">
+          <div className="flex-1 flex flex-col justify-end px-4 pb-8 sm:px-8 sm:pb-12 md:px-12 lg:px-16 lg:pb-16 w-full">
             <div className="max-w-[1400px] mx-auto w-full">
               <div className="lg:grid lg:grid-cols-2 lg:items-end gap-12 lg:gap-0">
                 
                 {/* Left Column */}
                 <div className="flex flex-col">
                   <AnimatedHeading 
-                    text="Shaping tomorrow\nwith vision and action." 
-                    className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal mb-8 tracking-tight leading-[1.1]"
+                    text="Shaping the Northeast\nwith vision and action." 
+                    className="text-[2.5rem] leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-[-0.04em] mb-4 sm:mb-6"
                   />
                   
                   <FadeIn delay={800} duration={1000}>
-                    <p className="text-base md:text-lg text-gray-400 mb-8 max-w-md leading-relaxed">
-                      We back visionaries and craft ventures that define what comes next.
+                    <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-8 sm:mb-10 max-w-lg leading-relaxed">
+                      16 Years of Precision Engineering. Led by CGO Nayanav Das.
                     </p>
                   </FadeIn>
                   
                   <FadeIn delay={1200}>
-                    <div className="flex flex-wrap gap-4">
-                      <button className="bg-white text-black px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">
-                        Start a Chat
+                    <div className="flex flex-col sm:flex-row flex-wrap gap-4 w-full sm:w-auto mb-8 lg:mb-0">
+                      <button className="w-full sm:w-auto bg-white text-black px-8 py-3.5 rounded-lg font-medium text-center transition-transform active:scale-95 hover:bg-gray-100">
+                        Start a Build
                       </button>
-                      <button className="liquid-glass border border-white/20 text-white px-8 py-3 rounded-lg font-medium hover:bg-white hover:text-black transition-colors">
-                        Explore Now
+                      <button className="w-full sm:w-auto liquid-glass border border-white/20 text-white px-8 py-3.5 rounded-lg font-medium text-center transition-all hover:bg-white hover:text-black active:scale-95">
+                        Explore Projects
                       </button>
                     </div>
                   </FadeIn>
@@ -66,10 +66,10 @@ const App: React.FC = () => {
 
                 {/* Right Column */}
                 <div className="flex items-end justify-start lg:justify-end mt-12 lg:mt-0">
-                  <FadeIn delay={1400}>
-                    <div className="liquid-glass border border-white/20 px-6 py-4 rounded-xl">
-                      <span className="text-lg md:text-xl lg:text-2xl font-light tracking-wide">
-                        Investing. Building. Advisory.
+                  <FadeIn delay={1400} className="w-full lg:w-auto">
+                    <div className="w-full lg:w-auto text-center lg:text-left liquid-glass border border-white/20 px-6 py-4 rounded-xl text-sm sm:text-base md:text-lg font-light mt-auto lg:mt-0">
+                      <span className="tracking-wide">
+                        Build. Design. Guarantee.
                       </span>
                     </div>
                   </FadeIn>
@@ -78,6 +78,7 @@ const App: React.FC = () => {
               </div>
             </div>
           </div>
+
         </div>
       </section>
 
