@@ -35,8 +35,8 @@ const App: React.FC = () => {
           <Navbar />
 
           {/* Hero Content positioned at bottom - Pushed below visual focal point */}
-          <div className="relative z-10 flex flex-col flex-1 justify-end pb-8 pt-[60vh] px-4 sm:px-8 sm:pb-12 md:px-12 lg:px-16 lg:pb-16 w-full">
-            <div className="max-w-[1400px] mx-auto w-full">
+          <div className="relative z-10 flex flex-col flex-1 mt-auto pt-24 pb-8 sm:pb-12 md:px-12 lg:px-16 lg:pb-16 w-full">
+            <div className="max-w-[1400px] mx-auto w-full px-4 sm:px-8">
               <div className="lg:grid lg:grid-cols-2 lg:items-end gap-12 lg:gap-0">
                 
                 {/* Left Column */}
@@ -53,11 +53,11 @@ const App: React.FC = () => {
                   </FadeIn>
                   
                   <FadeIn delay={1200}>
-                    <div className="flex flex-col sm:flex-row gap-3 w-full max-w-[260px] sm:max-w-none mb-6">
-                      <button className="w-full sm:w-auto flex justify-center items-center text-center bg-white text-black px-5 py-2.5 rounded-lg text-sm font-medium transition-transform active:scale-95 hover:bg-gray-100">
+                    <div className="flex flex-row gap-3 w-full mt-2 mb-8 lg:mb-0">
+                      <button className="flex-1 flex justify-center items-center text-center bg-white text-black px-2 py-3 rounded-lg text-[13px] sm:text-sm font-medium transition-transform active:scale-95 hover:bg-gray-100 whitespace-nowrap">
                         Start a Build
                       </button>
-                      <button className="w-full sm:w-auto flex justify-center items-center text-center liquid-glass border border-white/20 text-white px-5 py-2.5 rounded-lg text-sm font-light transition-all hover:bg-white hover:text-black active:scale-95">
+                      <button className="flex-1 flex justify-center items-center text-center liquid-glass border border-white/20 text-white px-2 py-3 rounded-lg text-[13px] sm:text-sm font-light transition-all hover:bg-white hover:text-black active:scale-95 whitespace-nowrap">
                         Explore Projects
                       </button>
                     </div>
@@ -78,6 +78,7 @@ const App: React.FC = () => {
               </div>
             </div>
           </div>
+
 
 
 
