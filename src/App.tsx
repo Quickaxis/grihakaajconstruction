@@ -11,12 +11,34 @@ import {
   Phone, 
   Mail, 
   MapPin, 
-  ArrowRight
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const handlePreloaderComplete = useCallback(() => setLoading(false), []);
+
+  const leaders = [
+    {
+      name: "Souptick Sinha",
+      title: "FOUNDER & PROPRIETOR",
+      bio: "Civil Engineer, Cost & Management Accountant, MBA & M.Sc. Leading the technical and financial foundation of Griha Kaaj Construction with unparalleled precision.",
+      image: "/souptick.jpg"
+    },
+    {
+      name: "Nayanav Das",
+      title: "CHIEF GROWTH OFFICER",
+      bio: "Pioneering growth and purpose-driven building across emerging markets through strategic vision.",
+      image: "/nayanav.jpg"
+    }
+  ];
+
+  const [currentLeader, setCurrentLeader] = useState(0);
+
+  const nextLeader = () => setCurrentLeader((prev) => (prev === leaders.length - 1 ? 0 : prev + 1));
+  const prevLeader = () => setCurrentLeader((prev) => (prev === 0 ? leaders.length - 1 : prev - 1));
 
   return (
     <>
@@ -223,63 +245,92 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* SECTION 3: LEADERSHIP */}
-        <section id="leadership" className="py-24 px-6 md:px-12 lg:px-16 bg-brand-indigo/[0.02]">
+        {/* SECTION 4: LEADERSHIP CAROUSEL */}
+        <section id="leadership" className="py-24 md:py-32 px-6 md:px-12 lg:px-16 bg-brand-indigo/[0.02]">
           <div className="max-w-[1400px] mx-auto">
-            <div className="lg:grid lg:grid-cols-2 gap-16 items-center">
-              {/* Quote Area */}
+            
+            {/* Header Row */}
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
               <Reveal>
-              <div className="mb-12 lg:mb-0 relative">
-                <span className="absolute -top-16 -left-10 text-[12rem] text-brand-indigo/5 font-serif leading-none select-none pointer-events-none">"</span>
-                <h2 className="text-4xl lg:text-5xl font-semibold leading-tight text-brand-indigo mb-6 relative z-10 tracking-tight">
-                  We don't just pour concrete; we anchor dreams.
-                </h2>
-                <div className="flex items-center gap-4 text-brand-indigo/60 mt-6 relative z-10">
-                  <div className="w-8 h-[1px] bg-brand-indigo/20"></div>
-                  <p className="font-semibold text-sm text-brand-indigo">Nayanav Das, Chief Growth Officer</p>
+                <div className="max-w-2xl">
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-brand-indigo mb-4">
+                    The Minds Behind <br /> the Marvels.
+                  </h2>
+                  <p className="text-brand-indigo/60 font-light text-lg">Engineering leadership that anchors the Northeast skyline.</p>
                 </div>
-              </div>
               </Reveal>
 
-              {/* Profiles */}
-              <div className="space-y-6">
-                {/* Nayanav Das Card */}
-                <Reveal delay={150}>
-                <div className="bg-white/40 backdrop-blur-md border border-brand-indigo/10 shadow-sm rounded-2xl p-8 relative overflow-hidden group cursor-pointer hover:bg-white/60 hover:-translate-y-1 hover:shadow-md transition-all duration-500">
-                  <div className="flex items-center gap-6 relative z-10">
-                    <img 
-                      src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=200&h=200" 
-                      alt="Nayanav Das" 
-                      className="w-16 h-16 rounded-full object-cover border border-brand-indigo/20 group-hover:border-brand-indigo/50 transition-colors"
-                    />
-                    <div>
-                      <h4 className="text-xl font-semibold text-brand-indigo">Nayanav Das</h4>
-                      <p className="text-brand-indigo/60 text-sm mb-2 uppercase tracking-wider font-light">Chief Growth Officer</p>
-                      <p className="text-sm text-brand-indigo/80 max-w-sm leading-relaxed font-light">Pioneering growth and purpose-driven building across emerging markets through strategic vision.</p>
-                    </div>
-                  </div>
+              {/* Navigation Arrows */}
+              <Reveal delay={200}>
+                <div className="flex gap-4">
+                  <button 
+                    onClick={prevLeader}
+                    className="w-14 h-14 rounded-full border border-brand-indigo/10 flex items-center justify-center text-brand-indigo hover:bg-brand-indigo hover:text-white transition-all duration-300 active:scale-90"
+                    aria-label="Previous leader"
+                  >
+                    <ChevronLeft size={24} />
+                  </button>
+                  <button 
+                    onClick={nextLeader}
+                    className="w-14 h-14 rounded-full border border-brand-indigo/10 flex items-center justify-center text-brand-indigo hover:bg-brand-indigo hover:text-white transition-all duration-300 active:scale-90"
+                    aria-label="Next leader"
+                  >
+                    <ChevronRight size={24} />
+                  </button>
                 </div>
-                </Reveal>
+              </Reveal>
+            </div>
 
-                {/* Souptick Sinha Card */}
-                <Reveal delay={300}>
-                <div className="bg-white/40 backdrop-blur-md border border-brand-indigo/10 shadow-sm rounded-2xl p-8 relative overflow-hidden group cursor-pointer hover:bg-white/60 hover:-translate-y-1 hover:shadow-md transition-all duration-500">
-                  <div className="flex items-center gap-6 relative z-10">
-                    <img 
-                      src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200&h=200" 
-                      alt="Souptick Sinha" 
-                      className="w-16 h-16 rounded-full object-cover border border-brand-indigo/20 group-hover:border-brand-indigo/50 transition-colors"
-                    />
-                    <div>
-                      <h4 className="text-xl font-semibold text-brand-indigo">Souptick Sinha</h4>
-                      <p className="text-brand-indigo/60 text-sm mb-2 uppercase tracking-wider font-light">FOUNDER & PROPRIETOR</p>
-                      <p className="text-sm text-brand-indigo/80 max-w-sm leading-relaxed font-light">Civil Engineer, Cost & Management Accountant, MBA & M.Sc. Leading the technical and financial foundation of Griha Kaaj Construction with unparalleled precision.</p>
+            {/* Interactive Carousel Card */}
+            <div className="relative min-h-[500px] md:min-h-[600px]">
+              <div 
+                key={currentLeader} // Triggers re-animation on change
+                className="grid grid-cols-1 lg:grid-cols-12 gap-0 bg-white/40 backdrop-blur-md border border-brand-indigo/5 rounded-3xl overflow-hidden shadow-sm"
+              >
+                {/* Left: Info (7 cols) */}
+                <div className="lg:col-span-7 p-8 md:p-16 flex flex-col justify-center">
+                  <Reveal>
+                    <div className="mb-8">
+                      <span className="text-xs tracking-[0.3em] font-medium text-brand-indigo/40 uppercase mb-4 block">
+                        {leaders[currentLeader].title}
+                      </span>
+                      <h3 className="text-5xl md:text-6xl lg:text-7xl font-heading text-brand-indigo mb-8 leading-none">
+                        {leaders[currentLeader].name}
+                      </h3>
+                      <div className="w-24 h-[1px] bg-brand-indigo/20 mb-8"></div>
+                      <p className="text-lg md:text-xl text-brand-indigo/80 font-light leading-relaxed max-w-xl">
+                        {leaders[currentLeader].bio}
+                      </p>
                     </div>
-                  </div>
+                  </Reveal>
+
+                  <Reveal delay={200}>
+                    <div className="mt-8">
+                      <button className="flex items-center gap-3 text-brand-indigo font-medium text-sm group">
+                        Connect on LinkedIn 
+                        <ArrowRight size={18} className="transition-transform group-hover:translate-x-2" />
+                      </button>
+                    </div>
+                  </Reveal>
                 </div>
-                </Reveal>
+
+                {/* Right: Portrait (5 cols) */}
+                <div className="lg:col-span-5 relative h-[400px] lg:h-auto bg-brand-indigo/5 overflow-hidden group">
+                  <img 
+                    src={leaders[currentLeader].image} 
+                    alt={leaders[currentLeader].name}
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                    onError={(e) => {
+                      // High-end fallback if image is missing
+                      e.currentTarget.src = `https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=1200`;
+                    }}
+                  />
+                  {/* Glass Accent */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-indigo/40 to-transparent pointer-events-none"></div>
+                </div>
               </div>
             </div>
+
           </div>
         </section>
 

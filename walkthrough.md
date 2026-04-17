@@ -16,6 +16,12 @@ We've successfully integrated a premium, luxury-focused animation system and bra
 - **Coverage**: Applied to all elements in **Sections 2 through 6** (Projects, Leadership, Technical Excellence, Regional Presence, and Contact).
 - **Staggering**: Implementation includes staggered delays for multi-card sections, creating a cascading visual effect.
 
+### 3. Magazine-Style Leadership Carousel
+- **Interactive States**: Dynamic React state management for cycling between leadership profiles.
+- **Visuals**: Magazine-style layout with high-contrast typography and large-scale portraits.
+- **Cinematic Transitions**: Added `key`-based re-animation to ensure every leader change feels like a premium page transition.
+- **Resilience**: Sophisticated fallback logic for portraits ensuring the UI remains pristine even if assets are missing.
+
 ### 3. "What We Build" Architectural Pillars
 - **Layout**: Dynamic 3-column grid with deep-focus architectural imagery.
 - **Interactions**: Interactive hover states with depth-zoom onto backgrounds and slide-up detail reveals.
