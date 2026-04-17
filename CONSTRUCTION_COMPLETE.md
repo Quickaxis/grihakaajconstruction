@@ -23,7 +23,7 @@ I have successfully built the 6-page ultra-luxury minimalist website for **Griha
 - **[MODIFY] [App.tsx](file:///c:/Users/chitr/Downloads/my%20websites/griha%20kaaj%20construction/src/App.tsx)**:
     - **Hero**: Raw video background with a two-column grid layout.
     - **Our Projects**: Masonry-style grid featuring project cards with glass overlays.
-    - **Leadership**: Professional profiles for Nayanav Das and Achintya Sinha.
+    - **Leadership**: Professional profiles for Nayanav Das and Souptick Sinha.
     - **Technical Excellence**: Service catalog using the liquid glass design.
     - **Regional Presence**: Illustrative Northeast regional map with topographic SVG overlays.
     - **Contact**: Minimalist form paired with a floating glass-morphism contact card.

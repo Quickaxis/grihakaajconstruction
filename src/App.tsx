@@ -171,18 +171,18 @@ const App: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Achintya Sinha Card */}
+                {/* Souptick Sinha Card */}
                 <div className="bg-white/40 backdrop-blur-md border border-brand-indigo/10 shadow-sm rounded-2xl p-8 relative overflow-hidden group cursor-pointer hover:bg-white/60 hover:-translate-y-1 hover:shadow-md transition-all duration-500">
                   <div className="flex items-center gap-6 relative z-10">
                     <img 
                       src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200&h=200" 
-                      alt="Achintya Sinha" 
+                      alt="Souptick Sinha" 
                       className="w-16 h-16 rounded-full object-cover border border-brand-indigo/20 group-hover:border-brand-indigo/50 transition-colors"
                     />
                     <div>
-                      <h4 className="text-xl font-semibold text-brand-indigo">Achintya Sinha</h4>
-                      <p className="text-brand-indigo/60 text-sm mb-2 uppercase tracking-wider font-light">Founder</p>
-                      <p className="text-sm text-brand-indigo/80 max-w-sm leading-relaxed font-light">16 years of engineering legacy, scaling technical mastery to define the Northeast Skyline with precision.</p>
+                      <h4 className="text-xl font-semibold text-brand-indigo">Souptick Sinha</h4>
+                      <p className="text-brand-indigo/60 text-sm mb-2 uppercase tracking-wider font-light">FOUNDER & PROPRIETOR</p>
+                      <p className="text-sm text-brand-indigo/80 max-w-sm leading-relaxed font-light">Civil Engineer, Cost & Management Accountant, MBA & M.Sc. Leading the technical and financial foundation of Griha Kaaj Construction with unparalleled precision.</p>
                     </div>
                   </div>
                 </div>
