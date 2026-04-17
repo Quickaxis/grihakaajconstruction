@@ -22,11 +22,11 @@ We've successfully integrated a premium, luxury-focused animation system and bra
 - **Cinematic Transitions**: Added `key`-based re-animation to ensure every leader change feels like a premium page transition.
 - **Resilience**: Sophisticated fallback logic for portraits ensuring the UI remains pristine even if assets are missing.
 
-### 4. Auto-Playing Location Slider
-- **Interaction**: Replaces the static grid with a high-impact, single-view slider that advances every 2 seconds.
-- **Visuals**: Dynamic progress bars indicate the current location within the cycle.
-- **Cinematic Transitions**: Leverages `key` property re-mounting to re-trigger `Reveal` animations for every location change, creating a premium "gallery" feel.
-- **Resilience**: Maintains automated image fallback logic while increasing horizontal focus.
+### 4. Smooth-Scrolling Location Slider
+- **Interaction**: Features a continuous flex track with `transform: translateX` logic, providing a fluid horizontal panning motion.
+- **Visuals**: Full-bleed location cards with high-contrast text and dynamic dot indicators.
+- **Cinematic Feel**: Uses `transition-transform` for smooth entry/exit of each site, maintaining the "Where We Work" theme.
+- **Coverage**: Auto-advances every 2 seconds to provide a hands-free tour of regional operations.
 
 ### 5. "What We Build" Architectural Pillars
 - **Layout**: Dynamic 3-column grid with deep-focus architectural imagery.

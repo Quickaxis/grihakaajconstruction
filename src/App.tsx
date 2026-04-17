@@ -421,45 +421,49 @@ const App: React.FC = () => {
             {/* Bottom Split: Locations Slider & Stats */}
             <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
               
-              {/* Left Side: Auto-playing Slider */}
+              {/* Left Side: Auto-Sliding Single Location */}
               <div className="w-full lg:w-3/5">
-                <div 
-                  key={currentLoc}
-                  className="relative group overflow-hidden rounded-3xl border border-[#F0E7D5]/10 aspect-[16/10] md:aspect-video bg-[#212842] cursor-pointer"
-                >
-                  {/* Map Image */}
-                  <img 
-                    src={locations[currentLoc].img} 
-                    alt={`${locations[currentLoc].name} Location`} 
-                    className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-[2000ms] ease-out" 
-                    onError={(e) => { 
-                      // Fallback with architectural character if image missing
-                      e.currentTarget.style.display = 'none'; 
-                    }}
-                  />
-                  {/* Dark Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-[#0B1221]/20 to-transparent"></div>
-                  
-                  {/* Content Overlay */}
-                  <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
-                    <Reveal>
-                      <span className="text-[#F0E7D5]/40 uppercase tracking-[0.4em] text-xs mb-2 block">Current Focus</span>
-                      <h3 className="font-heading text-[#F0E7D5] text-4xl md:text-5xl lg:text-6xl tracking-wide mb-6">
-                        {locations[currentLoc].name}
-                      </h3>
-                    </Reveal>
+                <Reveal>
+                  <div className="relative overflow-hidden rounded-2xl border border-[#F0E7D5]/10 bg-[#212842] aspect-[4/3] md:aspect-[16/9] lg:aspect-[4/3] shadow-2xl">
                     
-                    {/* Minimalist Progress Indicators */}
-                    <div className="flex gap-2">
-                      {locations.map((_, idx) => (
-                        <div 
-                          key={idx}
-                          className={`h-1 transition-all duration-500 rounded-full ${idx === currentLoc ? 'w-12 bg-[#F0E7D5]' : 'w-4 bg-[#F0E7D5]/20'}`}
-                        ></div>
+                    {/* Sliding Track */}
+                    <div 
+                      className="flex w-full h-full transition-transform duration-700 ease-in-out"
+                      style={{ transform: `translateX(-${currentLoc * 100}%)` }}
+                    >
+                      {locations.map((loc, idx) => (
+                        <div key={idx} className="min-w-full h-full relative shrink-0">
+                          {/* Map Image */}
+                          <img 
+                            src={loc.img} 
+                            alt={`${loc.name} Location`} 
+                            className="w-full h-full object-cover opacity-60" 
+                          />
+                          {/* Dark Gradient Overlay */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-[#0B1221]/20 to-transparent opacity-90"></div>
+                          
+                          {/* Location Label */}
+                          <div className="absolute bottom-8 left-8 md:bottom-12 md:left-12">
+                            <span className="font-heading text-[#F0E7D5] text-4xl md:text-5xl lg:text-6xl tracking-wide">
+                              {loc.name}
+                            </span>
+                          </div>
+                        </div>
                       ))}
                     </div>
+
+                    {/* Progress Indicators (Dots) */}
+                    <div className="absolute bottom-8 right-8 flex gap-2">
+                      {locations.map((_, idx) => (
+                        <div 
+                          key={idx} 
+                          className={`h-2 rounded-full transition-all duration-500 ${currentLoc === idx ? 'bg-[#F0E7D5] w-8' : 'bg-[#F0E7D5]/30 w-2'}`} 
+                        />
+                      ))}
+                    </div>
+
                   </div>
-                </div>
+                </Reveal>
               </div>
 
               {/* Right Side: Massive Stats */}
