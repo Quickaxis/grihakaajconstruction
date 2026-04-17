@@ -95,6 +95,79 @@ const App: React.FC = () => {
       {/* CONTINUOUS CONTENT BELOW HERO - LIGHT LUXURY EDITORIAL THEME */}
       <main className="bg-brand-cream text-brand-indigo w-full relative z-20">
         
+        {/* NEW SECTION 2: WHAT WE DO */}
+        <section className="bg-[#F0E7D5] py-24 md:py-32 px-6 md:px-12 lg:px-16 relative z-20">
+          <div className="max-w-7xl mx-auto">
+            
+            {/* Section Header */}
+            <div className="mb-16 md:mb-24 max-w-2xl">
+              <Reveal>
+                <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl text-[#212842] mb-6 leading-tight">
+                  What We Build.
+                </h2>
+                <p className="text-[#212842]/70 text-lg md:text-xl font-light leading-relaxed">
+                  From visionary residential estates to robust commercial infrastructure, we engineer spaces that define the Northeast skyline.
+                </p>
+              </Reveal>
+            </div>
+
+            {/* The 3-Column Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+              {/* CARD 1: Residential */}
+              <Reveal delay={100}>
+                <div className="group relative w-full h-[500px] md:h-[600px] rounded-2xl overflow-hidden cursor-pointer">
+                  {/* Background Image with Hover Zoom */}
+                  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
+                  {/* Dark Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-[#0B1221]/40 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100"></div>
+                  
+                  {/* Card Content */}
+                  <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                    <h3 className="font-heading text-3xl text-[#F0E7D5] mb-3">Residential Luxury</h3>
+                    <p className="text-[#F0E7D5]/80 font-light leading-relaxed mb-6 opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+                      High-end residential packages blending architectural precision with cost engineering. Home of the signature 19.8 Lacs Dream Home.
+                    </p>
+                    <div className="w-12 h-[1px] bg-[#F0E7D5] transition-all duration-500 group-hover:w-full"></div>
+                  </div>
+                </div>
+              </Reveal>
+
+              {/* CARD 2: Commercial */}
+              <Reveal delay={200}>
+                <div className="group relative w-full h-[500px] md:h-[600px] rounded-2xl overflow-hidden cursor-pointer">
+                  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-[#0B1221]/40 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100"></div>
+                  
+                  <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                    <h3 className="font-heading text-3xl text-[#F0E7D5] mb-3">Commercial Scale</h3>
+                    <p className="text-[#F0E7D5]/80 font-light leading-relaxed mb-6 opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+                      Large-scale structural projects and corporate spaces designed to anchor urban centers across the Northeast.
+                    </p>
+                    <div className="w-12 h-[1px] bg-[#F0E7D5] transition-all duration-500 group-hover:w-full"></div>
+                  </div>
+                </div>
+              </Reveal>
+
+              {/* CARD 3: Technical Consulting */}
+              <Reveal delay={300}>
+                <div className="group relative w-full h-[500px] md:h-[600px] rounded-2xl overflow-hidden cursor-pointer">
+                  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1931&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-[#0B1221]/40 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100"></div>
+                  
+                  <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                    <h3 className="font-heading text-3xl text-[#F0E7D5] mb-3">Structural & Civil</h3>
+                    <p className="text-[#F0E7D5]/80 font-light leading-relaxed mb-6 opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+                      Advanced plumbing, precision core cutting, and 3D VR visualization. We provide the invisible networks that make marvels possible.
+                    </p>
+                    <div className="w-12 h-[1px] bg-[#F0E7D5] transition-all duration-500 group-hover:w-full"></div>
+                  </div>
+                </div>
+              </Reveal>
+            </div>
+
+          </div>
+        </section>
+        
         {/* SECTION 2: OUR PROJECTS */}
         <section id="projects" className="py-24 px-6 md:px-12 lg:px-16">
           <div className="max-w-[1400px] mx-auto">
