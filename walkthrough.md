@@ -25,7 +25,8 @@ We've successfully integrated a premium, luxury-focused animation system and bra
 ### 4. Smooth-Scrolling Location Slider
 - **Interaction**: Features a continuous flex track with `transform: translateX` logic, providing a fluid horizontal panning motion.
 - **Visuals**: Full-bleed location cards with high-contrast text and dynamic dot indicators.
-- **Cinematic Feel**: Uses `transition-transform` for smooth entry/exit of each site, maintaining the "Where We Work" theme.
+- **Asset Integration**: Successfully integrated custom assets for **Sivsagar, Jorhat, Bokakhat, Barpeta, Dhirenpara, and Pamohi**.
+- **Optimization**: Moved images to the `public/image/` directory to ensure reliable serving and performance by the Vite build system.
 - **Coverage**: Auto-advances every 2 seconds to provide a hands-free tour of regional operations.
 
 ### 5. "What We Build" Architectural Pillars
