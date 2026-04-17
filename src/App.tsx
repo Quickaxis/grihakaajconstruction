@@ -41,9 +41,9 @@ const App: React.FC = () => {
   const prevLeader = () => setCurrentLeader((prev) => (prev === 0 ? leaders.length - 1 : prev - 1));
 
   const locations = [
-    { name: 'Sivasagar', img: '/image/sivsagar.png' },
+    { name: 'Sivsagar', img: '/image/sivsagar.png' },
     { name: 'Jorhat', img: '/image/jorhat.png' },
-    { name: 'Bokaghat', img: '/image/bokakhat.png' },
+    { name: 'Bokakhat', img: '/image/bokakhat.png' },
     { name: 'Barpeta', img: '/image/barpeta.png' },
     { name: 'Dhirenpara', img: '/image/dhirenpara.png' },
     { name: 'Pamohi', img: '/image/pamohi.png' }
