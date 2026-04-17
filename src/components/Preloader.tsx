@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import logo from '../assets/logo.jpg';
 
 interface PreloaderProps {
   onComplete: () => void;
@@ -84,7 +85,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
           }}
         >
           <img
-            src="/images/logo.jpg"
+            src={logo}
             alt="Griha Kaaj Construction Logo"
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
