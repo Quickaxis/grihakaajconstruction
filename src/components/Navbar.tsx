@@ -17,9 +17,14 @@ export const Navbar: React.FC = () => {
         </div>
 
         <div className="shrink-0">
-          <button className="bg-white text-black px-4 py-2 md:px-6 rounded-lg text-xs sm:text-sm font-medium whitespace-nowrap hover:bg-gray-100 transition-colors">
+          <a 
+            href="https://wa.me/916002766537?text=Hello%20Griha%20Kaaj%20Construction!%20I%20am%20interested%20in%20starting%20a%20project.%20Please%20share%20more%20details."
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-white text-black px-4 py-2 md:px-6 rounded-lg text-xs sm:text-sm font-medium whitespace-nowrap hover:bg-gray-100 transition-colors inline-block text-center"
+          >
             Start a Build
-          </button>
+          </a>
         </div>
       </div>
     </nav>

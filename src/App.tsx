@@ -52,9 +52,14 @@ const App: React.FC = () => {
                   
                   <FadeIn delay={1200}>
                     <div className="flex flex-row flex-wrap gap-3 w-full justify-start mt-2 mb-6 text-white">
-                      <button className="w-auto flex justify-center items-center text-center bg-white text-black px-6 py-2.5 rounded-lg text-[13px] sm:text-sm font-medium transition-transform active:scale-95 hover:bg-gray-100 whitespace-nowrap">
+                      <a 
+                        href="https://wa.me/916002766537?text=Hello%20Griha%20Kaaj%20Construction!%20I%20am%20interested%20in%20starting%20a%20project.%20Please%20share%20more%20details."
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="w-auto flex justify-center items-center text-center bg-white text-black px-6 py-2.5 rounded-lg text-[13px] sm:text-sm font-medium transition-transform active:scale-95 hover:bg-gray-100 whitespace-nowrap"
+                      >
                         Start a Build
-                      </button>
+                      </a>
                       <button className="w-auto flex justify-center items-center text-center liquid-glass border border-white/20 text-white px-6 py-2.5 rounded-lg text-[13px] sm:text-sm font-light transition-all hover:bg-white hover:text-black active:scale-95 whitespace-nowrap">
                         Explore Projects
                       </button>
@@ -285,26 +290,46 @@ const App: React.FC = () => {
 
               {/* Form side */}
               <div className="">
-                <form onSubmit={(e) => e.preventDefault()} className="flex flex-col">
+                <form 
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    const formData = new FormData(e.currentTarget);
+                    const name = formData.get('name');
+                    const phone = formData.get('phone');
+                    const project = formData.get('project');
+                    
+                    const message = `Hello Griha Kaaj! I would like to request a callback.\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Project Type:* ${project}`;
+                    const whatsappUrl = `https://wa.me/916002766537?text=${encodeURIComponent(message)}`;
+                    
+                    window.open(whatsappUrl, '_blank');
+                  }}
+                  className="w-full"
+                >
                   <input 
                     type="text" 
+                    name="name"
+                    required
                     placeholder="Your Name" 
-                    className="bg-transparent border-b border-brand-indigo/20 py-4 text-brand-indigo placeholder:text-brand-indigo/50 focus:outline-none focus:border-brand-indigo w-full mb-8 text-lg transition-all"
+                    className="bg-transparent border-b border-[#212842]/20 py-4 text-[#212842] placeholder:text-[#212842]/50 focus:outline-none focus:border-[#212842] w-full mb-6 text-lg transition-all"
                   />
                   <input 
                     type="tel" 
+                    name="phone"
+                    required
                     placeholder="Phone Number" 
-                    className="bg-transparent border-b border-brand-indigo/20 py-4 text-brand-indigo placeholder:text-brand-indigo/50 focus:outline-none focus:border-brand-indigo w-full mb-8 text-lg transition-all"
+                    className="bg-transparent border-b border-[#212842]/20 py-4 text-[#212842] placeholder:text-[#212842]/50 focus:outline-none focus:border-[#212842] w-full mb-6 text-lg transition-all"
                   />
-                  <select 
-                    className="bg-transparent border-b border-brand-indigo/20 py-4 text-brand-indigo text-lg focus:outline-none focus:border-brand-indigo w-full mb-12 transition-all appearance-none"
+                  <input 
+                    type="text" 
+                    name="project"
+                    required
+                    placeholder="Project Type (e.g., Residential, Commercial)" 
+                    className="bg-transparent border-b border-[#212842]/20 py-4 text-[#212842] placeholder:text-[#212842]/50 focus:outline-none focus:border-[#212842] w-full mb-8 text-lg transition-all"
+                  />
+                  <button 
+                    type="submit"
+                    className="bg-[#212842] text-[#F0E7D5] px-8 py-4 rounded-xl font-medium w-full hover:bg-[#212842]/90 transition-colors text-lg"
                   >
-                    <option className="bg-brand-cream">Project Type</option>
-                    <option className="bg-brand-cream">Residential</option>
-                    <option className="bg-brand-cream">Commercial</option>
-                    <option className="bg-brand-cream">Advisory</option>
-                  </select>
-                  <button className="bg-brand-indigo text-brand-cream px-8 py-4 rounded-xl font-medium w-full hover:bg-brand-indigo/90 transition-colors text-lg mt-4 shadow-lg active:scale-95">
                     Request a Callback
                   </button>
                 </form>
