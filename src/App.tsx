@@ -278,54 +278,34 @@ const App: React.FC = () => {
                   <p className="text-brand-indigo/60 font-light text-lg">Engineering leadership that anchors the Northeast skyline.</p>
                 </div>
               </Reveal>
-
-              {/* Navigation Arrows */}
-              <Reveal delay={200}>
-                <div className="flex gap-4">
-                  <button 
-                    onClick={prevLeader}
-                    className="w-14 h-14 rounded-full border border-brand-indigo/10 flex items-center justify-center text-brand-indigo hover:bg-brand-indigo hover:text-white transition-all duration-300 active:scale-90"
-                    aria-label="Previous leader"
-                  >
-                    <ChevronLeft size={24} />
-                  </button>
-                  <button 
-                    onClick={nextLeader}
-                    className="w-14 h-14 rounded-full border border-brand-indigo/10 flex items-center justify-center text-brand-indigo hover:bg-brand-indigo hover:text-white transition-all duration-300 active:scale-90"
-                    aria-label="Next leader"
-                  >
-                    <ChevronRight size={24} />
-                  </button>
-                </div>
-              </Reveal>
             </div>
 
             {/* Interactive Carousel Card */}
-            <div className="relative min-h-[500px] md:min-h-[600px]">
+            <div className="relative min-h-[600px] lg:min-h-[500px]">
               <div 
                 key={currentLeader} // Triggers re-animation on change
-                className="grid grid-cols-1 lg:grid-cols-12 gap-0 bg-white/40 backdrop-blur-md border border-brand-indigo/5 rounded-3xl overflow-hidden shadow-sm"
+                className="flex flex-col-reverse lg:flex-row bg-white/50 backdrop-blur-md border border-[#212842]/10 rounded-2xl overflow-hidden min-h-[600px] lg:min-h-[500px]"
               >
-                {/* Left: Info (7 cols) */}
-                <div className="lg:col-span-7 p-8 md:p-16 flex flex-col justify-center">
+                {/* Left: Info (3/5 on lg) */}
+                <div className="w-full lg:w-3/5 p-6 sm:p-8 lg:p-16 flex flex-col justify-center relative">
                   <Reveal>
-                    <div className="mb-8">
-                      <span className="text-xs tracking-[0.3em] font-medium text-brand-indigo/40 uppercase mb-4 block">
+                    <div className="mb-0">
+                      <span className="text-xs lg:text-sm tracking-widest text-[#212842]/60 uppercase mb-4 lg:mb-8 font-medium block">
                         {leaders[currentLeader].title}
                       </span>
-                      <h3 className="text-5xl md:text-6xl lg:text-7xl font-heading text-brand-indigo mb-8 leading-none">
+                      <h3 className="font-heading text-3xl lg:text-4xl text-[#212842] mb-1 leading-none">
                         {leaders[currentLeader].name}
                       </h3>
-                      <div className="w-24 h-[1px] bg-brand-indigo/20 mb-8"></div>
-                      <p className="text-lg md:text-xl text-brand-indigo/80 font-light leading-relaxed max-w-xl">
+                      <div className="w-16 h-[1px] bg-[#212842]/20 mb-6 lg:mb-8"></div>
+                      <p className="text-[#212842]/80 text-sm sm:text-base lg:text-lg font-light leading-relaxed max-w-lg mb-6 lg:mb-0">
                         {leaders[currentLeader].bio}
                       </p>
                     </div>
                   </Reveal>
 
                   <Reveal delay={200}>
-                    <div className="mt-8">
-                      <button className="flex items-center gap-3 text-brand-indigo font-medium text-sm group">
+                    <div className="mt-4 lg:mt-8">
+                      <button className="flex items-center gap-3 text-[#212842] font-medium text-sm group">
                         Connect on LinkedIn 
                         <ArrowRight size={18} className="transition-transform group-hover:translate-x-2" />
                       </button>
@@ -333,19 +313,44 @@ const App: React.FC = () => {
                   </Reveal>
                 </div>
 
-                {/* Right: Portrait (5 cols) */}
-                <div className="lg:col-span-5 relative h-[400px] lg:h-auto bg-brand-indigo/5 overflow-hidden group">
+                {/* Right: Portrait (2/5 on lg) */}
+                <div className="w-full lg:w-2/5 h-[350px] lg:h-auto relative bg-[#212842]/5 group shrink-0">
                   <img 
                     src={leaders[currentLeader].image} 
-                    alt={leaders[currentLeader].name}
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                    onError={(e) => {
-                      // High-end fallback if image is missing
-                      e.currentTarget.src = `https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=1200`;
-                    }}
+                    alt={leaders[currentLeader].name} 
+                    className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-500"
+                    onError={(e) => { e.currentTarget.src = 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop'; }} 
                   />
-                  {/* Glass Accent */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-indigo/40 to-transparent pointer-events-none"></div>
+                  
+                  {/* Dark gradient at bottom of image for control visibility */}
+                  <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/60 to-transparent"></div>
+
+                  {/* Slider Controls (Now inside the image) */}
+                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between z-10">
+                    <div className="flex gap-2">
+                      <button 
+                        onClick={prevLeader} 
+                        className="w-10 h-10 rounded-full bg-white/20 backdrop-blur border border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-[#212842] transition-colors"
+                        aria-label="Previous leader"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4"><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /></svg>
+                      </button>
+                      <button 
+                        onClick={nextLeader} 
+                        className="w-10 h-10 rounded-full bg-white/20 backdrop-blur border border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-[#212842] transition-colors"
+                        aria-label="Next leader"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4"><path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
+                      </button>
+                    </div>
+                    
+                    {/* Dots */}
+                    <div className="flex gap-1.5">
+                      {leaders.map((_, idx) => (
+                        <div key={idx} className={`h-1.5 rounded-full transition-all ${currentLeader === idx ? 'bg-white w-5' : 'bg-white/40 w-1.5'}`} />
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

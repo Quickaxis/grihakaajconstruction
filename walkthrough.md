@@ -19,6 +19,7 @@ We've successfully integrated a premium, luxury-focused animation system and bra
 ### 3. Magazine-Style Leadership Carousel
 - **Interactive States**: Dynamic React state management for cycling between leadership profiles.
 - **Visuals**: Magazine-style layout with high-contrast typography and large-scale portraits.
+- **Mobile Optimization**: Rebuilt the layout for mobile devices to prevent content overlap. The image now stacks optimally, and navigation controls are embedded directly within the portrait with a high-contrast overlay for better accessibility.
 - **Cinematic Transitions**: Added `key`-based re-animation to ensure every leader change feels like a premium page transition.
 - **Resilience**: Sophisticated fallback logic for portraits ensuring the UI remains pristine even if assets are missing.
 
