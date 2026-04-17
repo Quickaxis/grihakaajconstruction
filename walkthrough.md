@@ -16,7 +16,12 @@ We've successfully integrated a premium, luxury-focused animation system and bra
 - **Coverage**: Applied to all elements in **Sections 2 through 6** (Projects, Leadership, Technical Excellence, Regional Presence, and Contact).
 - **Staggering**: Implementation includes staggered delays for multi-card sections, creating a cascading visual effect.
 
-### 3. Asset Optimization
+### 3. "What We Build" Architectural Pillars
+- **Layout**: Dynamic 3-column grid with deep-focus architectural imagery.
+- **Interactions**: Interactive hover states with depth-zoom onto backgrounds and slide-up detail reveals.
+- **Content**: Defines core expertise across Residential, Commercial, and Technical Consulting domains.
+
+### 4. Asset Optimization
 - Moved the brand logo to `src/assets/logo.jpg`.
 - Updated components to import assets directly, ensuring they are properly bundled and optimized by the Vite build pipeline.
 
