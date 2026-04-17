@@ -1,26 +1,37 @@
-# Walkthrough - WhatsApp Functional Updates
+# Walkthrough - Cinematic Animation & Branding Update
 
-I have successfully updated the **Griha Kaaj Construction** website to make the Call-to-Action (CTA) buttons and the Contact Form functional using WhatsApp routing.
+We've successfully integrated a premium, luxury-focused animation system and branding update to the Griha Kaaj Construction website. These changes bring a sophisticated "editorial" feel to the user experience.
 
-## Changes Made
+## ✨ Key Features Implemented
 
-### 1. "Start a Build" Buttons
-- **Navbar**: Updated the button in `src/components/Navbar.tsx` from a `<button>` to an `<a>` tag.
-- **Hero Section**: Updated the button in `src/App.tsx` from a `<button>` to an `<a>` tag.
-- **WhatsApp Link**: Both buttons now link to `https://wa.me/916002766537` with a pre-filled introductory message.
-- **Security**: Added `target="_blank" rel="noopener noreferrer"` to ensure safety and a smooth user experience.
+### 1. Cinematic Luxury Loading Screen
+- **Color Palette**: Midnight Indigo background with Vanilla Cream accents.
+- **Visuals**: Features the company logo with a soft ambient glow and a clean architectural grid overlay.
+- **Animation**: A sleek loading bar that signals precision engineering, followed by a smooth fade-to-site transition.
+- **Typography**: Optimized using `Archivo Black` for a bold, established brand presence.
 
-### 2. Contact Form (Section 6)
-- **Functional React Form**: Replaced the static form in `App.tsx` with a React-controlled form.
-- **Form Submission**: The `onSubmit` handler now:
-  - Captures the **Name**, **Phone**, and **Project Type**.
-  - Formats the data into a clean, markdown-style WhatsApp message.
-  - Dynamically opens a WhatsApp link with the encoded message in a new tab.
+### 2. Scroll-Triggered Reveal System
+- **Component**: Created a standalone `Reveal.tsx` component using `IntersectionObserver`.
+- **Effect**: Smooth slide-up and fade-in transitions triggered as you scroll.
+- **Coverage**: Applied to all elements in **Sections 2 through 6** (Projects, Leadership, Technical Excellence, Regional Presence, and Contact).
+- **Staggering**: Implementation includes staggered delays for multi-card sections, creating a cascading visual effect.
 
-## Verification Results
+### 3. Asset Optimization
+- Moved the brand logo to `src/assets/logo.jpg`.
+- Updated components to import assets directly, ensuring they are properly bundled and optimized by the Vite build pipeline.
 
-- **CTA Links**: Verified that the URL includes the correct phone number and text payload.
-- **Contact Form**: Verified that the `onSubmit` logic correctly encodes specific form fields into the WhatsApp URL.
-- **Visuals**: Maintained the original design aesthetics while adding functionality.
+## 🛠️ Files Modified
 
-You can now click any "Start a Build" button or submit the contact form to initiate a WhatsApp conversation with the business.
+- [Preloader.tsx](file:///c:/Users/chitr/Downloads/my%20websites/griha%20kaaj%20construction/src/components/Preloader.tsx): The loading screen component.
+- [Reveal.tsx](file:///c:/Users/chitr/Downloads/my%20websites/griha%20kaaj%20construction/src/components/Reveal.tsx): The scroll-animation wrapper.
+- [App.tsx](file:///c:/Users/chitr/Downloads/my%20websites/griha%20kaaj%20construction/src/App.tsx): Integrated the Preloader logic and wrapped content sections in Reveal animations.
+- [index.css](file:///c:/Users/chitr/Downloads/my%20websites/griha%20kaaj%20construction/src/index.css): Added global keyframes for the loading bar.
+
+## ✅ Verification
+- Verified the loading screen first-load state.
+- Checked scroll-reveal triggers across all major content sections.
+- Confirmed asset paths for the logo are resolved correctly.
+- All changes have been committed and pushed to the `main` branch on GitHub.
+
+> [!TIP]
+> To adjust the speed or distance of the animations, you can modify the `Reveal.tsx` classes (`translate-y-12` and `duration-[800ms]`).
