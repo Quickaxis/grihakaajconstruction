@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { FadeIn, AnimatedHeading } from './components/Animations';
 import { Preloader } from './components/Preloader';
@@ -39,6 +39,25 @@ const App: React.FC = () => {
 
   const nextLeader = () => setCurrentLeader((prev) => (prev === leaders.length - 1 ? 0 : prev + 1));
   const prevLeader = () => setCurrentLeader((prev) => (prev === 0 ? leaders.length - 1 : prev - 1));
+
+  const locations = [
+    { name: 'Sivasagar', img: '/image/sivsagar.png' },
+    { name: 'Jorhat', img: '/image/jorhat.png' },
+    { name: 'Bokaghat', img: '/image/bokakhat.png' },
+    { name: 'Barpeta', img: '/image/barpeta.png' },
+    { name: 'Dhirenpara', img: '/image/dhirenpara.png' },
+    { name: 'Pamohi', img: '/image/pamohi.png' }
+  ];
+
+  const [currentLoc, setCurrentLoc] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentLoc((prev) => (prev === locations.length - 1 ? 0 : prev + 1));
+    }, 2000); // 2-second auto-slide
+
+    return () => clearInterval(timer);
+  }, [locations.length]);
 
   return (
     <>
@@ -399,39 +418,48 @@ const App: React.FC = () => {
               </div>
             </div>
 
-            {/* Bottom Split: Locations Grid & Stats */}
+            {/* Bottom Split: Locations Slider & Stats */}
             <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
               
-              {/* Left Side: 6 Locations Grid */}
-              <div className="w-full lg:w-3/5 grid grid-cols-2 md:grid-cols-3 gap-4">
-                {[
-                  { name: 'Sivasagar', img: '/sivsagar.png' },
-                  { name: 'Jorhat', img: '/jorhat.png' },
-                  { name: 'Bokaghat', img: '/bokakhat.png' },
-                  { name: 'Barpeta', img: '/barpeta.png' },
-                  { name: 'Dhirenpara', img: '/dhirenpara.png' },
-                  { name: 'Pamohi', img: '/pamohi.png' }
-                ].map((loc, idx) => (
-                  <Reveal key={loc.name} delay={idx * 100}>
-                    <div className="relative group overflow-hidden rounded-xl border border-[#F0E7D5]/10 aspect-square bg-[#212842] cursor-pointer">
-                      {/* Map Image */}
-                      <img 
-                        src={loc.img} 
-                        alt={`${loc.name} Location`} 
-                        className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" 
-                        onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                      />
-                      {/* Dark Gradient Overlay for Text Readability */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-[#0B1221]/40 to-transparent opacity-90"></div>
-                      {/* Location Label */}
-                      <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6">
-                        <span className="font-heading text-[#F0E7D5] text-lg md:text-xl tracking-wide">
-                          {loc.name}
-                        </span>
-                      </div>
+              {/* Left Side: Auto-playing Slider */}
+              <div className="w-full lg:w-3/5">
+                <div 
+                  key={currentLoc}
+                  className="relative group overflow-hidden rounded-3xl border border-[#F0E7D5]/10 aspect-[16/10] md:aspect-video bg-[#212842] cursor-pointer"
+                >
+                  {/* Map Image */}
+                  <img 
+                    src={locations[currentLoc].img} 
+                    alt={`${locations[currentLoc].name} Location`} 
+                    className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-[2000ms] ease-out" 
+                    onError={(e) => { 
+                      // Fallback with architectural character if image missing
+                      e.currentTarget.style.display = 'none'; 
+                    }}
+                  />
+                  {/* Dark Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-[#0B1221]/20 to-transparent"></div>
+                  
+                  {/* Content Overlay */}
+                  <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
+                    <Reveal>
+                      <span className="text-[#F0E7D5]/40 uppercase tracking-[0.4em] text-xs mb-2 block">Current Focus</span>
+                      <h3 className="font-heading text-[#F0E7D5] text-4xl md:text-5xl lg:text-6xl tracking-wide mb-6">
+                        {locations[currentLoc].name}
+                      </h3>
+                    </Reveal>
+                    
+                    {/* Minimalist Progress Indicators */}
+                    <div className="flex gap-2">
+                      {locations.map((_, idx) => (
+                        <div 
+                          key={idx}
+                          className={`h-1 transition-all duration-500 rounded-full ${idx === currentLoc ? 'w-12 bg-[#F0E7D5]' : 'w-4 bg-[#F0E7D5]/20'}`}
+                        ></div>
+                      ))}
                     </div>
-                  </Reveal>
-                ))}
+                  </div>
+                </div>
               </div>
 
               {/* Right Side: Massive Stats */}
