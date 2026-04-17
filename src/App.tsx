@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import { Navbar } from './components/Navbar';
 import { FadeIn, AnimatedHeading } from './components/Animations';
+import { Preloader } from './components/Preloader';
 import { 
   Box, 
   Crosshair, 
@@ -13,7 +14,12 @@ import {
 } from 'lucide-react';
 
 const App: React.FC = () => {
+  const [loading, setLoading] = useState(true);
+  const handlePreloaderComplete = useCallback(() => setLoading(false), []);
+
   return (
+    <>
+      {loading && <Preloader onComplete={handlePreloaderComplete} />}
     <div className="relative min-h-screen w-full flex flex-col bg-black selection:bg-brand-indigo selection:text-brand-cream">
       
       {/* SECTION 1: HERO */}
@@ -355,6 +361,7 @@ const App: React.FC = () => {
         }
       `}</style>
     </div>
+    </>  
   );
 };
 

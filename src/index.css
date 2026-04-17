@@ -85,3 +85,15 @@
     animation: fadeInKeyframes 1s forwards;
   }
 }
+
+@keyframes loadBar {
+  0%   { transform: scaleX(0); }
+  40%  { transform: scaleX(0.3); }
+  80%  { transform: scaleX(0.8); }
+  100% { transform: scaleX(1); }
+}
+
+.animate-load-bar {
+  animation: loadBar 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transform-origin: left;
+}
