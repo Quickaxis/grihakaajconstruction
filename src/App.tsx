@@ -2,6 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { Navbar } from './components/Navbar';
 import { FadeIn, AnimatedHeading } from './components/Animations';
 import { Preloader } from './components/Preloader';
+import { Reveal } from './components/Reveal';
 import { 
   Box, 
   Crosshair, 
@@ -97,10 +98,13 @@ const App: React.FC = () => {
         {/* SECTION 2: OUR PROJECTS */}
         <section id="projects" className="py-24 px-6 md:px-12 lg:px-16">
           <div className="max-w-[1400px] mx-auto">
-            <h2 className="text-4xl md:text-5xl font-semibold mb-12 tracking-tight text-brand-indigo">Engineered to Perfection.</h2>
+            <Reveal>
+              <h2 className="text-4xl md:text-5xl font-semibold mb-12 tracking-tight text-brand-indigo">Engineered to Perfection.</h2>
+            </Reveal>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Card 1 */}
+              <Reveal delay={100}>
               <div className="bg-white/40 backdrop-blur-md border border-brand-indigo/10 shadow-sm rounded-2xl overflow-hidden group cursor-pointer hover:bg-white/60 hover:-translate-y-1 hover:shadow-md transition-all duration-500">
                 <img 
                   src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1600" 
@@ -119,8 +123,10 @@ const App: React.FC = () => {
                   </div>
                 </div>
               </div>
+              </Reveal>
 
               {/* Card 2 */}
+              <Reveal delay={250}>
               <div className="bg-white/40 backdrop-blur-md border border-brand-indigo/10 shadow-sm rounded-2xl overflow-hidden group cursor-pointer hover:bg-white/60 hover:-translate-y-1 hover:shadow-md transition-all duration-500">
                 <img 
                   src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1600" 
@@ -139,6 +145,7 @@ const App: React.FC = () => {
                   </div>
                 </div>
               </div>
+              </Reveal>
             </div>
           </div>
         </section>
@@ -148,6 +155,7 @@ const App: React.FC = () => {
           <div className="max-w-[1400px] mx-auto">
             <div className="lg:grid lg:grid-cols-2 gap-16 items-center">
               {/* Quote Area */}
+              <Reveal>
               <div className="mb-12 lg:mb-0 relative">
                 <span className="absolute -top-16 -left-10 text-[12rem] text-brand-indigo/5 font-serif leading-none select-none pointer-events-none">"</span>
                 <h2 className="text-4xl lg:text-5xl font-semibold leading-tight text-brand-indigo mb-6 relative z-10 tracking-tight">
@@ -158,10 +166,12 @@ const App: React.FC = () => {
                   <p className="font-semibold text-sm text-brand-indigo">Nayanav Das, Chief Growth Officer</p>
                 </div>
               </div>
+              </Reveal>
 
               {/* Profiles */}
               <div className="space-y-6">
                 {/* Nayanav Das Card */}
+                <Reveal delay={150}>
                 <div className="bg-white/40 backdrop-blur-md border border-brand-indigo/10 shadow-sm rounded-2xl p-8 relative overflow-hidden group cursor-pointer hover:bg-white/60 hover:-translate-y-1 hover:shadow-md transition-all duration-500">
                   <div className="flex items-center gap-6 relative z-10">
                     <img 
@@ -176,8 +186,10 @@ const App: React.FC = () => {
                     </div>
                   </div>
                 </div>
+                </Reveal>
 
                 {/* Souptick Sinha Card */}
+                <Reveal delay={300}>
                 <div className="bg-white/40 backdrop-blur-md border border-brand-indigo/10 shadow-sm rounded-2xl p-8 relative overflow-hidden group cursor-pointer hover:bg-white/60 hover:-translate-y-1 hover:shadow-md transition-all duration-500">
                   <div className="flex items-center gap-6 relative z-10">
                     <img 
@@ -192,6 +204,7 @@ const App: React.FC = () => {
                     </div>
                   </div>
                 </div>
+                </Reveal>
               </div>
             </div>
           </div>
@@ -200,28 +213,38 @@ const App: React.FC = () => {
         {/* SECTION 4: TECHNICAL EXCELLENCE */}
         <section id="technical" className="py-24 px-6 md:px-12 lg:px-16">
           <div className="max-w-[1400px] mx-auto">
-            <h2 className="text-4xl md:text-5xl font-semibold mb-16 tracking-tight text-brand-indigo">Precision in every metric.</h2>
+            <Reveal>
+              <h2 className="text-4xl md:text-5xl font-semibold mb-16 tracking-tight text-brand-indigo">Precision in every metric.</h2>
+            </Reveal>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Reveal delay={100}>
               <div className="bg-white/40 backdrop-blur-md border border-brand-indigo/10 shadow-sm rounded-2xl p-8 hover:bg-white/60 hover:-translate-y-1 hover:shadow-md transition-all duration-500 group">
                 <Box size={32} color="#212842" className="mb-6 transition-transform group-hover:scale-110" strokeWidth={1.5} />
                 <h3 className="text-lg font-semibold mb-3 text-brand-indigo">3D VR Visualization</h3>
                 <p className="text-brand-indigo/80 font-light text-sm leading-relaxed">Immersive previews of your space before ground is broken. Walk alongside your future.</p>
               </div>
+              </Reveal>
+              <Reveal delay={200}>
               <div className="bg-white/40 backdrop-blur-md border border-brand-indigo/10 shadow-sm rounded-2xl p-8 hover:bg-white/60 hover:-translate-y-1 hover:shadow-md transition-all duration-500 group">
                 <Crosshair size={32} color="#212842" className="mb-6 transition-transform group-hover:scale-110" strokeWidth={1.5} />
                 <h3 className="text-lg font-semibold mb-3 text-brand-indigo">Core Cutting & Drilling</h3>
                 <p className="text-brand-indigo/80 font-light text-sm leading-relaxed">Precision cutting technology ensures structural integrity while allowing for advanced modifications.</p>
               </div>
+              </Reveal>
+              <Reveal delay={300}>
               <div className="bg-white/40 backdrop-blur-md border border-brand-indigo/10 shadow-sm rounded-2xl p-8 hover:bg-white/60 hover:-translate-y-1 hover:shadow-md transition-all duration-500 group">
                 <Droplet size={32} color="#212842" className="mb-6 transition-transform group-hover:scale-110" strokeWidth={1.5} />
                 <h3 className="text-lg font-semibold mb-3 text-brand-indigo">Advanced Plumbing</h3>
                 <p className="text-brand-indigo/80 font-light text-sm leading-relaxed">Engineered hydraulic solutions. Invisible networks integrated flawlessly within architectural marvels.</p>
               </div>
+              </Reveal>
+              <Reveal delay={400}>
               <div className="bg-white/40 backdrop-blur-md border border-brand-indigo/10 shadow-sm rounded-2xl p-8 hover:bg-white/60 hover:-translate-y-1 hover:shadow-md transition-all duration-500 group">
                 <Building size={32} color="#212842" className="mb-6 transition-transform group-hover:scale-110" strokeWidth={1.5} />
                 <h3 className="text-lg font-semibold mb-3 text-brand-indigo">Structural Consulting</h3>
                 <p className="text-brand-indigo/80 font-light text-sm leading-relaxed">Calculation meets art. Ensuring timeless durability through advanced structural analysis.</p>
               </div>
+              </Reveal>
             </div>
           </div>
         </section>
@@ -237,33 +260,45 @@ const App: React.FC = () => {
           </div>
 
           <div className="max-w-[1400px] mx-auto text-center relative z-10">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-20 tracking-tight text-brand-indigo">Rooted in Assam. Building the Northeast.</h2>
+            <Reveal>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-20 tracking-tight text-brand-indigo">Rooted in Assam. Building the Northeast.</h2>
+            </Reveal>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              <Reveal delay={100}>
               <div className="bg-white/40 backdrop-blur-md border border-brand-indigo/10 shadow-sm rounded-2xl p-10 flex flex-col items-center justify-center text-center hover:bg-white/60 hover:-translate-y-1 hover:shadow-md transition-all duration-500">
                 <p className="text-5xl font-light mb-3 text-brand-indigo">40+</p>
                 <p className="text-brand-indigo/60 tracking-[0.2em] text-xs uppercase font-light">Active Sites</p>
               </div>
+              </Reveal>
+              <Reveal delay={200}>
               <div className="bg-white/40 backdrop-blur-md border border-brand-indigo/10 shadow-sm rounded-2xl p-10 flex flex-col items-center justify-center text-center hover:bg-white/60 hover:-translate-y-1 hover:shadow-md transition-all duration-500">
                 <p className="text-5xl font-light mb-3 text-brand-indigo">15</p>
                 <p className="text-brand-indigo/60 tracking-[0.2em] text-xs uppercase font-light">Years Guarantee</p>
               </div>
+              </Reveal>
+              <Reveal delay={300}>
               <div className="bg-white/40 backdrop-blur-md border border-brand-indigo/10 shadow-sm rounded-2xl p-10 flex flex-col items-center justify-center text-center hover:bg-white/60 hover:-translate-y-1 hover:shadow-md transition-all duration-500">
                 <p className="text-5xl font-light mb-3 text-brand-indigo">Dibrugarh</p>
                 <p className="text-brand-indigo/60 tracking-[0.2em] text-xs uppercase font-light">Headquarters</p>
               </div>
+              </Reveal>
             </div>
           </div>
         </section>
 
         {/* SECTION 6: START YOUR BUILD & FOOTER */}
         <section id="contact" className="pt-16 pb-32 px-6">
+          <Reveal>
           <div className="max-w-6xl mx-auto bg-white/40 backdrop-blur-md border border-brand-indigo/10 shadow-sm rounded-3xl p-10 lg:p-16 relative overflow-hidden">
             <div className="lg:grid lg:grid-cols-2 gap-16 relative z-10">
               {/* Info side */}
               <div className="">
-                <h2 className="text-4xl md:text-5xl font-semibold mb-10 tracking-tight text-brand-indigo">Ready to break ground?</h2>
+                <Reveal delay={100}>
+                  <h2 className="text-4xl md:text-5xl font-semibold mb-10 tracking-tight text-brand-indigo">Ready to break ground?</h2>
+                </Reveal>
                 <div className="flex flex-col gap-6">
+                  <Reveal delay={200}>
                   <div className="flex items-center gap-6">
                     <div className="w-12 h-12 rounded-full border border-brand-indigo/10 flex items-center justify-center text-brand-indigo">
                       <Phone size={20} />
@@ -273,6 +308,8 @@ const App: React.FC = () => {
                       <p className="text-lg text-brand-indigo font-semibold">+91 6002766537</p>
                     </div>
                   </div>
+                  </Reveal>
+                  <Reveal delay={300}>
                   <div className="flex items-center gap-6">
                     <div className="w-12 h-12 rounded-full border border-brand-indigo/10 flex items-center justify-center text-brand-indigo">
                       <Mail size={20} />
@@ -282,6 +319,8 @@ const App: React.FC = () => {
                       <p className="text-lg text-brand-indigo font-semibold">office@grihakaaj.com</p>
                     </div>
                   </div>
+                  </Reveal>
+                  <Reveal delay={400}>
                   <div className="flex items-center gap-6">
                     <div className="w-12 h-12 rounded-full border border-brand-indigo/10 flex items-center justify-center text-brand-indigo">
                       <MapPin size={20} />
@@ -291,10 +330,12 @@ const App: React.FC = () => {
                       <p className="text-lg text-brand-indigo font-semibold">HQ: Dibrugarh, Assam</p>
                     </div>
                   </div>
+                  </Reveal>
                 </div>
               </div>
 
               {/* Form side */}
+              <Reveal delay={200}>
               <div className="">
                 <form 
                   onSubmit={(e) => {
@@ -340,9 +381,12 @@ const App: React.FC = () => {
                   </button>
                 </form>
               </div>
+              </Reveal>
             </div>
           </div>
+          </Reveal>
 
+          <Reveal delay={200}>
           <div className="max-w-6xl mx-auto mt-24 pt-8 border-t border-brand-indigo/10 flex flex-col md:flex-row justify-between items-center gap-4 text-brand-indigo/40 text-[10px] uppercase tracking-[0.2em] font-light">
             <p>© 2026 Griha Kaaj Construction. All rights reserved.</p>
             <div className="flex gap-8">
@@ -350,6 +394,7 @@ const App: React.FC = () => {
               <a href="#" className="hover:text-brand-indigo transition-colors">Terms</a>
             </div>
           </div>
+          </Reveal>
         </section>
 
       </main>
