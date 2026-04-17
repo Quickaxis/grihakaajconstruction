@@ -373,40 +373,83 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* SECTION 5: REGIONAL PRESENCE */}
-        <section 
-          id="presence" 
-          className="py-32 px-6 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/60 via-transparent to-transparent relative overflow-hidden"
-        >
-          {/* Decorative absolute text */}
-          <div className="text-[6rem] md:text-[10rem] lg:text-[14rem] font-black text-brand-indigo/5 whitespace-nowrap flex justify-center items-center select-none pointer-events-none absolute inset-0 z-0 tracking-tighter uppercase">
-            Joi Ai Axom
-          </div>
-
-          <div className="max-w-[1400px] mx-auto text-center relative z-10">
-            <Reveal>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-20 tracking-tight text-brand-indigo">Rooted in Assam. Building the Northeast.</h2>
-            </Reveal>
+        {/* SECTION 5: WHERE WE WORK */}
+        <section id="presence" className="bg-[#0B1221] py-24 md:py-32 px-6 md:px-12 lg:px-16 relative z-20 overflow-hidden">
+          <div className="max-w-7xl mx-auto">
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <Reveal delay={100}>
-              <div className="bg-white/40 backdrop-blur-md border border-brand-indigo/10 shadow-sm rounded-2xl p-10 flex flex-col items-center justify-center text-center hover:bg-white/60 hover:-translate-y-1 hover:shadow-md transition-all duration-500">
-                <p className="text-5xl font-light mb-3 text-brand-indigo">40+</p>
-                <p className="text-brand-indigo/60 tracking-[0.2em] text-xs uppercase font-light">Active Sites</p>
+            {/* Header Row */}
+            <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-16 mb-20">
+              <div className="max-w-2xl">
+                <Reveal>
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-12 h-[2px] bg-[#F0E7D5]"></div>
+                    <span className="text-[#F0E7D5]/80 uppercase tracking-widest text-sm font-medium">Where We Work</span>
+                  </div>
+                  <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-[#F0E7D5] leading-[1.1]">
+                    Rooted in Assam.<br/>Transforming communities across the Northeast.
+                  </h2>
+                </Reveal>
               </div>
-              </Reveal>
-              <Reveal delay={200}>
-              <div className="bg-white/40 backdrop-blur-md border border-brand-indigo/10 shadow-sm rounded-2xl p-10 flex flex-col items-center justify-center text-center hover:bg-white/60 hover:-translate-y-1 hover:shadow-md transition-all duration-500">
-                <p className="text-5xl font-light mb-3 text-brand-indigo">15</p>
-                <p className="text-brand-indigo/60 tracking-[0.2em] text-xs uppercase font-light">Years Guarantee</p>
+              <div className="max-w-md lg:mt-16">
+                <Reveal delay={200}>
+                  <p className="text-[#F0E7D5]/70 text-lg font-light leading-relaxed">
+                    No matter where you want to build, we mobilize the right resources and experts to drive value and realize your project goals. From urban centers to emerging districts, if you're ready, we're ready.
+                  </p>
+                </Reveal>
               </div>
-              </Reveal>
-              <Reveal delay={300}>
-              <div className="bg-white/40 backdrop-blur-md border border-brand-indigo/10 shadow-sm rounded-2xl p-10 flex flex-col items-center justify-center text-center hover:bg-white/60 hover:-translate-y-1 hover:shadow-md transition-all duration-500">
-                <p className="text-5xl font-light mb-3 text-brand-indigo">Dibrugarh</p>
-                <p className="text-brand-indigo/60 tracking-[0.2em] text-xs uppercase font-light">Headquarters</p>
+            </div>
+
+            {/* Bottom Split: Locations Grid & Stats */}
+            <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
+              
+              {/* Left Side: 6 Locations Grid */}
+              <div className="w-full lg:w-3/5 grid grid-cols-2 md:grid-cols-3 gap-4">
+                {[
+                  { name: 'Sivasagar', img: '/sivsagar.png' },
+                  { name: 'Jorhat', img: '/jorhat.png' },
+                  { name: 'Bokaghat', img: '/bokakhat.png' },
+                  { name: 'Barpeta', img: '/barpeta.png' },
+                  { name: 'Dhirenpara', img: '/dhirenpara.png' },
+                  { name: 'Pamohi', img: '/pamohi.png' }
+                ].map((loc, idx) => (
+                  <Reveal key={loc.name} delay={idx * 100}>
+                    <div className="relative group overflow-hidden rounded-xl border border-[#F0E7D5]/10 aspect-square bg-[#212842] cursor-pointer">
+                      {/* Map Image */}
+                      <img 
+                        src={loc.img} 
+                        alt={`${loc.name} Location`} 
+                        className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" 
+                        onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                      />
+                      {/* Dark Gradient Overlay for Text Readability */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-[#0B1221]/40 to-transparent opacity-90"></div>
+                      {/* Location Label */}
+                      <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6">
+                        <span className="font-heading text-[#F0E7D5] text-lg md:text-xl tracking-wide">
+                          {loc.name}
+                        </span>
+                      </div>
+                    </div>
+                  </Reveal>
+                ))}
               </div>
-              </Reveal>
+
+              {/* Right Side: Massive Stats */}
+              <div className="w-full lg:w-2/5 flex flex-col gap-12 md:gap-16">
+                <Reveal delay={200}>
+                  <div>
+                    <h3 className="font-heading text-7xl md:text-8xl lg:text-9xl text-[#F0E7D5] mb-2 leading-none">40+</h3>
+                    <p className="text-[#F0E7D5]/80 text-xl md:text-2xl font-light">Active Sites</p>
+                  </div>
+                </Reveal>
+                <Reveal delay={400}>
+                  <div>
+                    <h3 className="font-heading text-7xl md:text-8xl lg:text-9xl text-[#F0E7D5] mb-2 leading-none">15</h3>
+                    <p className="text-[#F0E7D5]/80 text-xl md:text-2xl font-light">Years Guarantee</p>
+                  </div>
+                </Reveal>
+              </div>
+
             </div>
           </div>
         </section>

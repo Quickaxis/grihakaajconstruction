@@ -22,12 +22,18 @@ We've successfully integrated a premium, luxury-focused animation system and bra
 - **Cinematic Transitions**: Added `key`-based re-animation to ensure every leader change feels like a premium page transition.
 - **Resilience**: Sophisticated fallback logic for portraits ensuring the UI remains pristine even if assets are missing.
 
-### 3. "What We Build" Architectural Pillars
+### 4. "Where We Work" Global Presence Section
+- **Aesthetic**: Transitioned from a light to a dark, high-contrast theme (#0B1221) for a sophisticated international feel.
+- **Layout**: Features a 6-location grid paired with massive, typography-driven statistics.
+- **Interactions**: Interactive map cards with hover-scaling effects and automated image fallbacks.
+- **Typography**: Uses high-impact headings to emphasize the regional scale of operations.
+
+### 5. "What We Build" Architectural Pillars
 - **Layout**: Dynamic 3-column grid with deep-focus architectural imagery.
 - **Interactions**: Interactive hover states with depth-zoom onto backgrounds and slide-up detail reveals.
 - **Content**: Defines core expertise across Residential, Commercial, and Technical Consulting domains.
 
-### 4. Asset Optimization
+### 6. Asset Optimization
 - Moved the brand logo to `src/assets/logo.jpg`.
 - Updated components to import assets directly, ensuring they are properly bundled and optimized by the Vite build pipeline.
 
