@@ -4,16 +4,13 @@ We've successfully integrated a premium, luxury-focused animation system and bra
 
 ## ✨ Key Features Implemented
 
-### 1. Cinematic Preloader
-- **Visuals**: Features a **Midnight Indigo** and **Vanilla Cream** palette, with a 2-second loading bar animation.
-- **Integration**: Integrated into `App.tsx` with state management to ensure it only runs once per initial load.
+### 1. Cinematic Luxury Loading Screen
+- **Color Palette**: Midnight Indigo background with Vanilla Cream accents.
+- **Visuals**: Features the company logo with a soft ambient glow and a clean architectural grid overlay.
+- **Animation**: A sleek loading bar that signals precision engineering, followed by a smooth fade-to-site transition.
+- **Typography**: Optimized using `Archivo Black` for a bold, established brand presence.
 
-### 2. Functional Mobile Navbar
-- **Hamburger Menu**: Implemented a state-managed hamburger toggle for mobile devices.
-- **Glassmorphism Overlay**: Added a premium, fullscreen mobile menu with `backdrop-blur-xl` and smooth translation animations.
-- **Accessibility**: Includes high-contrast links and a dedicated mobile CTA button ("Start a Build").
-
-### 3. Scroll-Triggered Reveal System
+### 2. Scroll-Triggered Reveal System
 - **Component**: Created a standalone `Reveal.tsx` component using `IntersectionObserver`.
 - **Effect**: Smooth slide-up and fade-in transitions triggered as you scroll.
 - **Coverage**: Applied to all elements in **Sections 2 through 6** (Projects, Leadership, Technical Excellence, Regional Presence, and Contact).
@@ -38,15 +35,20 @@ We've successfully integrated a premium, luxury-focused animation system and bra
 - **Interactions**: Interactive hover states with depth-zoom onto backgrounds and slide-up detail reveals.
 - **Content**: Defines core expertise across Residential, Commercial, and Technical Consulting domains.
 
-### 6. Asset Optimization
-- Moved the brand logo to `src/assets/logo.jpg`.
-- Updated components to import assets directly, ensuring they are properly bundled and optimized by the Vite build pipeline.
+- **Content**: Defines core expertise across Residential, Commercial, and Technical Consulting domains.
+
+### 7. Floating "Back to Top" Assistant
+- **Colors**: Styled with Midnight Indigo (`#212842`) and Vanilla Cream (`#F0E7D5`).
+- **Logic**: Automatically appears after scrolling 500px down the page.
+- **Animation**: Smooth fade-in and slide-up transition upon visibility.
+- **Accessibility**: Includes high-contrast stroke and aria-labels for screen readers.
 
 ## 🛠️ Files Modified
 
 - [Preloader.tsx](file:///c:/Users/chitr/Downloads/my%20websites/griha%20kaaj%20construction/src/components/Preloader.tsx): The loading screen component.
+- [BackToTop.tsx](file:///c:/Users/chitr/Downloads/my%20websites/griha%20kaaj%20construction/src/components/BackToTop.tsx): The floating navigation component.
 - [Reveal.tsx](file:///c:/Users/chitr/Downloads/my%20websites/griha%20kaaj%20construction/src/components/Reveal.tsx): The scroll-animation wrapper.
-- [App.tsx](file:///c:/Users/chitr/Downloads/my%20websites/griha%20kaaj%20construction/src/App.tsx): Integrated the Preloader logic and wrapped content sections in Reveal animations.
+- [App.tsx](file:///c:/Users/chitr/Downloads/my%20websites/griha%20kaaj%20construction/src/App.tsx): Integrated the Preloader and BackToTop logic.
 - [index.css](file:///c:/Users/chitr/Downloads/my%20websites/griha%20kaaj%20construction/src/index.css): Added global keyframes for the loading bar.
 
 ## ✅ Verification

@@ -3,6 +3,7 @@ import { Navbar } from './components/Navbar';
 import { FadeIn, AnimatedHeading } from './components/Animations';
 import { Preloader } from './components/Preloader';
 import { Reveal } from './components/Reveal';
+import { BackToTop } from './components/BackToTop';
 import { 
   Box, 
   Crosshair, 
@@ -609,6 +610,7 @@ const App: React.FC = () => {
           letter-spacing: -0.04em;
         }
       `}</style>
+      <BackToTop />
     </div>
     </>  
   );
