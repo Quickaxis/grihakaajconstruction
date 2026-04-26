@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'brand-indigo': '#212842',
-        'brand-cream': '#F0E7D5',
+        'brand-cyprus': '#003E3E',
+        'brand-cloud': '#F3F6F7',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
